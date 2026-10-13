@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-icon">📦</span>
+            <div>
+                <h2>StockFlow</h2>
+                <small>Inventory Manager</small>
+            </div>
+        </div>
+
+        <nav>
+            <a class="nav-link active" href="#dashboard">▦ Dashboard</a>
+            <a class="nav-link" href="#products">▣ Products</a>
+            <a class="nav-link" href="#categories">▤ Categories</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <span class="status-dot"></span> Inventory system active
+        </div>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">INVENTORY / OVERVIEW</p>
+                <h1>Inventory Dashboard</h1>
+                <p class="subtitle">Manage and track your products easily.</p>
+            </div>
+            <div class="admin-chip">👤 Admin</div>
+        </header>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <div class="stat-icon purple">▣</div>
+                <p>Total Products</p>
+                <h2 id="totalProducts">0</h2>
+                <small>Products in inventory</small>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon blue">▤</div>
+                <p>Total Stock</p>
+                <h2 id="totalStock">0</h2>
+                <small>Units available</small>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon orange">⚠</div>
+                <p>Low Stock</p>
+                <h2 id="lowStock">0</h2>
+                <small>Products below 10 units</small>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon green">₹</div>
+                <p>Inventory Value</p>
+                <h2 id="inventoryValue">₹0</h2>
+                <small>Total stock value</small>
+            </article>
+        </section>
+
+        <section class="product-section" id="products">
+            <div class="section-heading">
+                <div>
+                    <h2>Product Inventory</h2>
+                    <p>Search, filter, and explore your products.</p>
+                </div>
+                <span class="inventory-badge">● Inventory list</span>
+            </div>
+
+            <div class="filter-bar" id="categories">
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search products..."
+                        aria-label="Search products by name"
+                    >
+                </div>
+
+                <select id="categoryFilter" aria-label="Filter by category">
+                    <option value="">All Categories</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Accessories">Accessories</option>
+                </select>
+
+                <button id="clearFilters" class="secondary-button" type="button">
+                    Clear filters
+                </button>
+            </div>
+
+            <div class="results-row">
+                <p id="resultsCount">Showing 0 products</p>
+                <p>4 products per page</p>
+            </div>
+
+            <div class="product-grid" id="productGrid"></div>
+
+            <div class="empty-state" id="emptyState" hidden>
+                <div class="empty-icon">🔎</div>
+                <h3>No products found</h3>
+                <p>Try another product name or change the category filter.</p>
+            </div>
+
+            <div class="pagination">
+                <button id="prevButton" class="page-button" type="button">
+                    ← Previous
+                </button>
+
+                <span id="pageInfo">Page 1 of 1</span>
+
+                <button id="nextButton" class="page-button primary-button" type="button">
+                    Next →
+                </button>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 StockFlow Inventory · Built for smarter stock management</p>
+        </footer>
+    </main>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
